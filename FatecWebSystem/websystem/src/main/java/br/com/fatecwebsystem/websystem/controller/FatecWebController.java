@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller // sabe que e controlador
-@RequestMapping("/fatecweb") //Rota cria mapeamento para controladora determinou o nome da controlador, mapeado-a /Rota
+@RequestMapping("/fatecweb") //Rota cria mapeamento para controladora determinou o nome da controlador, mapeando a /Rota
 public class FatecWebController {
 
     @GetMapping

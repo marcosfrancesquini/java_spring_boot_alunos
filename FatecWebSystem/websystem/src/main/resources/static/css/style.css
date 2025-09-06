@@ -2,13 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: blueviolet;
 }
 
 /* Estilo do body */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f7fb;
-  color: #333;
+  /* background-color: #f4f7fb; */
+  background-color: blueviolet;
+
+  color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,4 +62,43 @@ h1 {
 .menu-links a:focus {
   outline: 2px solid #ffcc00;
   outline-offset: 2px;
+}
+
+tr {
+  background-color: #1eb300;
+}
+
+/* novo */
+
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+th,
+td {
+  border: 2px solid #333;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #444;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+td[colspan="2"] {
+  font-weight: bold;
+  background-color: #ddd;
 }

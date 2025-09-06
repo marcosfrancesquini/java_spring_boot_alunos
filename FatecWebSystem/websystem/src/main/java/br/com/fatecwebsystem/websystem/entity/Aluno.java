@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -35,4 +37,8 @@ public class Aluno {
     private String cpfAluno;
 
     private Integer raAluno;
+
+    @ManyToOne
+    @JoinColumn(name = "idCurso_fk")
+    private Curso curso;
 }

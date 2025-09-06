@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../static/css/style.css" />
     <title>Lista de Alunos</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 0 auto;
+        background-color: #fff;
+      }
+
+      th,
+      td {
+        border: 2px solid #333;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #444;
+        color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      td[colspan="2"] {
+        font-weight: bold;
+        background-color: #ddd;
+      }
+    </style>
   </head>
   <body>
     <h1 style="text-align: center">Lista de Alunos</h1>
@@ -13,7 +46,7 @@
     <!-- Tabela para listar os alunos cadastrados -->
     <table style="margin: 0 auto; border: 2px solid">
       <tr>
-        <td colspan="8" style="text-align: center">Lista de Alunos</td>
+        <td colspan="9" style="text-align: center">Lista de Alunos</td>
       </tr>
       <tr>
         <th>#</th>
@@ -22,6 +55,7 @@
         <th>Telefone</th>
         <th>CPF</th>
         <th>RA</th>
+        <th>Curso</th>
         <th colspan="2">Ações</th>
       </tr>
       <tr th:each="aluno : ${alunos}">
@@ -31,6 +65,8 @@
         <td th:text="${aluno.telefoneAluno}"></td>
         <td th:text="${aluno.cpfAluno}"></td>
         <td th:text="${aluno.raAluno}"></td>
+        <td th:text="${aluno.curso.nomeCurso}"></td>
+        <td></td>
         <td>
           <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
           <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>

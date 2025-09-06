@@ -4,68 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Cursos</title>
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 0 auto;
+        background-color: #fff;
       }
 
-      /* Estilo do body */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f7fb;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
+      th,
+      td {
+        border: 2px solid #333;
+        padding: 12px;
+        text-align: left;
       }
 
-      /* Estilo do container principal */
-      .container {
-        max-width: 900px;
-        width: 100%;
-        padding: 20px;
-      }
-
-      /* Estilo do título principal */
-      h1 {
-        font-size: 2.5rem;
-        color: #343a40;
-        margin-bottom: 20px;
-      }
-
-      /* Estilo dos links de navegação */
-      .menu-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-      }
-
-      /* Estilo dos botões (links) */
-      .menu-links a {
-        text-decoration: none;
-        font-size: 1.2rem;
+      th {
+        background-color: #444;
         color: #fff;
-        background-color: #007bff;
-        padding: 12px 24px;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: background-color 0.3s, transform 0.2s;
       }
 
-      /* Efeito de hover nos botões */
-      .menu-links a:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
       }
 
-      /* Efeito de foco para acessibilidade */
-      .menu-links a:focus {
-        outline: 2px solid #ffcc00;
-        outline-offset: 2px;
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      td[colspan="2"] {
+        font-weight: bold;
+        background-color: #ddd;
       }
     </style>
   </head>

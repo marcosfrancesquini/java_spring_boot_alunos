@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Cursos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        width: 60%;
+        margin: 30px auto;
+        padding: 30px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+
+      input[type="text"]:focus {
+        border-color: #333;
+        outline: none;
+        background-color: #f0f0f0;
+      }
+
+      button {
+        background-color: #444;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+
+      .form-actions {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <h1 style="text-align: center">Cadastro de Aluno</h1>
+    <h1>Cadastro de Curso</h1>
 
     <form th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
       <input type="hidden" name="idCurso" th:field="*{idCurso}" readonly />
@@ -18,20 +85,17 @@
         name="nomeCurso"
         th:field="*{nomeCurso}"
       />
-      <br />
 
-      <label for="periodoCurso">Periodo:</label>
+      <label for="periodoCurso">Período:</label>
       <input
         type="text"
         id="periodoCurso"
         name="periodoCurso"
         th:field="*{periodoCurso}"
       />
-      <br />
 
       <label for="chCurso">Carga Horária:</label>
       <input type="text" id="chCurso" name="chCurso" th:field="*{chCurso}" />
-      <br />
 
       <label for="tipoCurso">Tipo de Curso:</label>
       <input
@@ -40,10 +104,11 @@
         name="tipoCurso"
         th:field="*{tipoCurso}"
       />
-      <br />
 
-      <button type="submit">Salvar</button>
-      <!-- <button type="/fatecweb">Voltar</button> -->
+      <div class="form-actions">
+        <button type="submit">Salvar</button>
+        <a href="/fatecweb"><button type="button">Voltar</button></a>
+      </div>
     </form>
   </body>
 </html>
