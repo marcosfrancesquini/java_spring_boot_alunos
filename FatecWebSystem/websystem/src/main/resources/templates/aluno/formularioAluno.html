@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Alunos</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Cadastro de Aluno</h1>
+
+    <form th:action="@{/alunos/salvar}" method="post" th:object="${aluno}">
+      <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly />
+
+      <label for="nomeAluno">Nome:</label>
+      <input
+        type="text"
+        id="nomeAluno"
+        name="nomeAluno"
+        th:field="*{nomeAluno}"
+      />
+      <br />
+
+      <label for="enderecoAluno">Endereço:</label>
+      <input
+        type="text"
+        id="enderecoAluno"
+        name="enderecoAluno"
+        th:field="*{enderecoAluno}"
+      />
+      <br />
+
+      <label for="telefoneAluno">Telefone:</label>
+      <input
+        type="text"
+        id="telefoneAluno"
+        name="telefoneAluno"
+        th:field="*{telefoneAluno}"
+      />
+      <br />
+
+      <label for="cpfAluno">Cpf:</label>
+      <input type="text" id="cpfAluno" name="cpfAluno" th:field="*{cpfAluno}" />
+      <br />
+
+      <label for="raAluno">RA:</label>
+      <input type="text" id="raAluno" name="raAluno" th:field="*{raAluno}" />
+      <br />
+
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>

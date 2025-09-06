@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Estilo do container principal */
+.container {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Estilo do título principal */
+h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos links de navegação */
+.menu-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Estilo dos botões (links) */
+.menu-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito de hover nos botões */
+.menu-links a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Efeito de foco para acessibilidade */
+.menu-links a:focus {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
+}

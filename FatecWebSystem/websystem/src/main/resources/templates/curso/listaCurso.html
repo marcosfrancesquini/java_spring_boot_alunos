@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Cursos</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilo do body */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fb;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      /* Estilo do container principal */
+      .container {
+        max-width: 900px;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Estilo do título principal */
+      h1 {
+        font-size: 2.5rem;
+        color: #343a40;
+        margin-bottom: 20px;
+      }
+
+      /* Estilo dos links de navegação */
+      .menu-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      /* Estilo dos botões (links) */
+      .menu-links a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #007bff;
+        padding: 12px 24px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      /* Efeito de hover nos botões */
+      .menu-links a:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      /* Efeito de foco para acessibilidade */
+      .menu-links a:focus {
+        outline: 2px solid #ffcc00;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center">Lista de Cursos</h1>
+      <h3 style="text-align: center"><a href="/cursos/criar">Cadastrar</a></h3>
+
+      <!-- Tabela para listar os alunos cadastrados -->
+      <table style="margin: 0 auto; border: 2px solid">
+        <tr>
+          <td colspan="8" style="text-align: center">Lista de Cursos</td>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Período</th>
+          <th>Carga Horária</th>
+          <th>Tipo</th>
+          <th colspan="2">Ações</th>
+        </tr>
+        <tr th:each="curso : ${cursos}">
+          <td th:text="${curso.idCurso}"></td>
+          <td th:text="${curso.nomeCurso}"></td>
+          <td th:text="${curso.periodoCurso}"></td>
+          <td th:text="${curso.chCurso}"></td>
+          <td th:text="${curso.tipoCurso}"></td>
+          <td>
+            <a th:href="@{/cursos/editar/{id}(id=${curso.idCurso})}">Editar</a>
+            <a th:href="@{/cursos/excluir/{id}(id=${curso.idCurso})}"
+              >Excluir</a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
