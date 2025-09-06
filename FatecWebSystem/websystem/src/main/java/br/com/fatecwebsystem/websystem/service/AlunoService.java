@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fatecwebsystem.websystem.dto.AlunoTelefone;
 import br.com.fatecwebsystem.websystem.entity.Aluno;
 import br.com.fatecwebsystem.websystem.repository.AlunoRepository;
 
@@ -34,4 +35,9 @@ public class AlunoService {
     public Aluno findById(Integer id) {
         return alunoRepository.findById(id).orElse(null);
     }
+
+    //Método para buscar nome e telefone - metodo criado e no DTO Data Transfer Object
+    public List<AlunoTelefone> buscarNomesEtelefone() { //aqui poderia ser outro nome
+        return alunoRepository.buscarNomesETelefone();
+    };
 }

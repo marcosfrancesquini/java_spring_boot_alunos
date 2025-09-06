@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.fatecwebsystem.websystem.dto.AlunoTelefone;
 import br.com.fatecwebsystem.websystem.entity.Aluno;
 import br.com.fatecwebsystem.websystem.service.AlunoService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,6 +55,13 @@ public class AlunoController {
         Aluno aluno = alunoService.findById(id);
         model.addAttribute("aluno", aluno);
         return "aluno/formularioAluno";
+    }
+
+    @GetMapping("/listar-nome-telefone")
+    public String listarNomeTelefone(Model model) {
+        List<AlunoTelefone> alunos = alunoService.buscarNomesEtelefone();
+        model.addAttribute("alunos", alunos);
+        return "aluno/listaNomeTelefone"; //o listaNomeTelefone.html
     }
     
     
